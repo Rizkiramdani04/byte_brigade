@@ -17,16 +17,15 @@ st.set_page_config(
     page_icon = '💰', 
     layout = 'wide'
 )
-# Check if the required NLTK data is already downloaded
-import os, nltk
+import nltk
 
-if not all(os.path.exists(f"{nltk.data.find('stopwords')}.zip"),
-           os.path.exists(f"{nltk.data.find('punkt')}.zip"),
-           os.path.exists(f"{nltk.data.find('wordnet')}.zip")):
-    # Download the required NLTK data
+@st.cache_resource
+def load_nltk_data():
     nltk.download('stopwords')
     nltk.download('punkt')
     nltk.download('wordnet')
+
+load_nltk_data()
 
 def extract_data():
     lowongan_kerja = pd.read_excel(
