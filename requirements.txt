@@ -1,7 +1,7 @@
 requests
 openpyxl
 pandas
-streamlit 
+streamlit==1.35.0
 matplotlib
 plotly
 nltk
