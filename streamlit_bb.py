@@ -18,6 +18,11 @@ st.set_page_config(
     layout = 'wide'
 )
 
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
+
 
 def extract_data():
     lowongan_kerja = pd.read_excel(
