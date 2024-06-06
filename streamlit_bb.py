@@ -17,7 +17,7 @@ st.set_page_config(
     page_icon = '💰', 
     layout = 'wide'
 )
-
+import nltk
 # Check if the required NLTK data is already downloaded
 if not all(os.path.exists(f"{nltk.data.find('stopwords')}.zip"),
            os.path.exists(f"{nltk.data.find('punkt')}.zip"),
